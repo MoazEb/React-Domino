@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Domino Game - React Implementation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a digital implementation of the classic domino game built with React and Redux. Players take turns placing compatible domino tiles, trying to be the first to use all their tiles. The game supports two players on the same device with an intuitive drag-and-drop interface.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+-   Real-time game board updates
+-   Animated card movements and transitions
+-   Turn-based gameplay with player indicators
+-   Draw pile for when players can't make a move
+-   Win/loss detection and end-game screens
+-   Responsive design that works on tablets and desktops
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technical Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Core Components
 
-### `npm test`
+-   Home.js: Main game component that manages the game state and UI
+-   gameLogic.js: Utility file containing game logic functions
+-   CardLayout.js: Component for rendering individual domino tiles
+-   Winner.js and Draw.js: End-game screens
+-   Redux store: Manages game state and card initialization
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Game Logic Functions
 
-### `npm run build`
+The game logic is separated into reusable functions in gameLogic.js:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   checkAllowAtFirst(): Validates first move playability
+-   checkAllowThen(): Checks if a card can be played based on board state
+-   getAllowedNumbers(): Determines which numbers are playable
+-   playerHasPlayableCard(): Checks if player has valid moves
+-   determineCardPlacement(): Calculates where a card can be placed
+-   checkGameStatus(): Determines if game has ended
+-   isGameDeadlocked(): Checks if no more moves are possible
+-   removeCardFromHand(): Removes played card from player's hand
+-   drawCard(): Handles drawing cards from the deck
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How To Play
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Players start with 7 cards each
+2. Player 1 goes first
+3. Players take turns placing compatible dominoes
+4. If a player can't make a move, they must draw from the pile
+5. First player to use all their dominoes wins
+6. If neither player can make a move and the draw pile is empty, the game ends in a draw
 
-### `npm run eject`
+## Installation and Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository: `git clone https://github.com/yourusername/domino-game.git`
+2. Install dependencies: `cd domino-game` and `npm install`
+3. Start the development server: `npm start`
+4. Open your browser to `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   React for UI components
+-   Redux for state management
+-   Framer Motion for animations
+-   CSS for styling
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Future Improvements
 
-## Learn More
+-   Add online multiplayer support
+-   Implement AI opponent option
+-   Add customizable game rules
+-   Create mobile-friendly version
+-   Add sound effects and music
+-   Implement user profiles and statistics
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details.
