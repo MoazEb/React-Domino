@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import CardLayout from "../../Cards/CardLayout";
+import CardLayout from "../../components/CardLayout";
 
 const allCardsSlice = createSlice({
-    name: 'allCards',
+    name: "allCards",
     initialState: {
         cards: [],
         player1_avialabe: 0,
@@ -27,17 +27,16 @@ const allCardsSlice = createSlice({
         },
         addToPlayer1: (state) => {
             state.player1_avialabe++;
-            console.log('player1:::')
+            console.log("player1:::");
             console.log(state.player1_avialabe);
         },
         addToPlayer2: (state) => {
             state.player2_avialabe++;
-            console.log('player2:::')
+            console.log("player2:::");
             console.log(state.player2_avialabe);
-        }
+        },
     },
 });
 
 export const { initializeCards, addToPlayer1, addToPlayer2 } = allCardsSlice.actions;
 export default allCardsSlice.reducer;
-

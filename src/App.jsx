@@ -1,10 +1,10 @@
-import C3 from './Cards/C3';
+import Home from "./pages/Home";
 function App() {
-  return (
-    <div className='w-full bg-[#f4f1d8] h-screen flex justify-center items-center '>
-      <C3 />
-    </div>
-  );
+    return (
+        <div className="w-full bg-[#f4f1d8] h-screen flex justify-center items-center ">
+            <Home />
+        </div>
+    );
 }
 
 export default App;
